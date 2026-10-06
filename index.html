@@ -4,136 +4,108 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Edits by Sampu</title>
-<meta name="description" content="Podcast episodes cut into Shorts, Reels and TikToks: hook on frame one, word-by-word captions, clean audio. Start with 3 free Shorts.">
+<meta name="description" content="Sampu edits long podcasts into Shorts, Reels and TikToks. Start with 3 free Shorts from your own episode.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="mark" href="./"><i></i>Edits by Sampu</a>
-    <nav><a href="#how">How it works</a><a href="#plans">Plans</a><a href="#contact">Contact</a></nav>
+    <a class="mark" href="./"><i></i>sampu</a>
+    <span class="mail-top">sampuushibabhakti@gmail.com</span>
   </header>
 
   <main>
-    <section class="hero" style="margin-top:30px">
-      <div>
-        <h1 aria-label="Your podcast, cut into Shorts people actually finish.">
-          <span class="w" style="--i:0">Your</span> <span class="w" style="--i:1">podcast,</span>
-          <span class="w" style="--i:2">cut</span> <span class="w" style="--i:3">into</span>
-          <span class="w" style="--i:4">Shorts</span> <span class="w" style="--i:5">people</span>
-          <span class="w" style="--i:6">actually</span> <span class="w hot" style="--i:7">finish.</span>
-        </h1>
-        <p class="lede">Send me one long episode. You get back 10 to 30 vertical clips, each starting on its strongest line, with a hook you can read on the first frame, captions word by word and audio that sounds right on a phone.</p>
-        <div class="actions">
-          <a class="btn" href="#contact">Get 3 free Shorts</a>
-          <a class="btn line" href="#plans">See plans</a>
+    <section class="intro">
+      <h1>
+        <span class="ln"><span style="--i:0">I cut long podcasts</span></span>
+        <span class="ln"><span style="--i:1">into Shorts people</span></span>
+        <span class="ln"><span style="--i:2">watch to the end.</span></span>
+      </h1>
+      <p>Hey, I'm Sampu. I'm based in Nepal and I edit every day. I run clip channels for creator campaigns, so I see which first seconds make people stay and which make them swipe. These are some of my clips. Send me an episode and I'll make 3 from yours for free.</p>
+    </section>
+
+    <section class="reel" aria-label="Clips I edited">
+      <figure class="clip" style="--i:0">
+        <div class="v"><video src="work/wedding.mp4" poster="work/wedding.jpg" muted loop playsinline preload="metadata"></video></div>
+        <figcaption><span class="t">A wedding ring vs 4 female friends</span><span class="m">2,400 views · YouTube</span></figcaption>
+      </figure>
+      <figure class="clip" style="--i:1">
+        <div class="v"><video src="work/attractive.mp4" poster="work/attractive.jpg" muted loop playsinline preload="metadata"></video></div>
+        <figcaption><span class="t">You're most attractive when she can't tell</span><span class="m">2,200 views · YouTube</span></figcaption>
+      </figure>
+      <figure class="clip" style="--i:2">
+        <div class="v"><video src="work/twothings.mp4" poster="work/twothings.jpg" muted loop playsinline preload="metadata"></video></div>
+        <figcaption><span class="t">2 things that stop her walking all over you</span><span class="m">1,900 views · YouTube</span></figcaption>
+      </figure>
+      <figure class="clip" style="--i:3">
+        <div class="v"><video src="work/chased.mp4" poster="work/chased.jpg" muted loop playsinline preload="metadata"></video></div>
+        <figcaption><span class="t">Only 4.5% of men get chased</span><span class="m">1,400 views · YouTube</span></figcaption>
+      </figure>
+      <figure class="clip" style="--i:4">
+        <div class="v"><video src="work/unfold.mp4" poster="work/unfold.jpg" muted loop playsinline preload="metadata"></video></div>
+        <figcaption><span class="t">Watch this $50K home unfold</span><span class="m">home tour · factory footage</span></figcaption>
+      </figure>
+    </section>
+    <p class="reel-note">Clips I edited for the Michael Sartain and BOXABL clipping campaigns on Content Rewards. I'm an independent clipper, not affiliated with either. View counts from YouTube Studio, October 2026.</p>
+
+    <section class="numbers reveal">
+      <p class="lead">My clip channel passed <b><span data-count="49000">49,000</span> views in 12 days</b>. The median Short gets about <b><span data-count="1050">1,050</span></b>, where channels this small usually see 50 to 500.</p>
+      <div class="bars">
+        <div class="barrow">
+          <div class="lab"><span>Typical channel under 1,000 subscribers</span><b>50–500</b></div>
+          <div class="tr"><div class="fill" data-left="4.2" data-width="37.5"></div></div>
         </div>
-      </div>
-      <div class="hero-side" aria-label="Preview of how a finished Short looks">
-        <div class="phone">
-          <div class="scene"><div class="mic"></div><div class="grill"></div></div>
-          <div class="bar" id="pbar"></div>
-          <div class="hook">Why your Shorts stall at <span>1,000 views</span></div>
-          <div class="caps" id="caps" aria-hidden="true"></div>
+        <div class="barrow me">
+          <div class="lab"><span>My channel, median per Short</span><b>1,050</b></div>
+          <div class="tr"><div class="fill" data-left="0" data-width="87.5"></div></div>
         </div>
-        <div class="track" aria-hidden="true">
-          <div class="row"><span style="flex:3"></span><span style="flex:2"></span><span style="flex:4"></span><span style="flex:2"></span><span style="flex:3"></span></div>
-          <div class="wave" id="wave"></div>
-          <div class="tc"><span>00:00:00</span><span id="tc">00:00:00</span><span>00:00:24</span></div>
-          <div class="head" id="head"></div>
-        </div>
+        <div class="axis"><span>0</span><span>400</span><span>800</span><span>1,200 views</span></div>
+        <p class="src">Benchmark: published 2026 YouTube Shorts benchmarks for channels under 1,000 subscribers.</p>
       </div>
     </section>
 
-    <section class="proof reveal">
-      <div>
-        <div class="big"><span data-count="49000">49,000</span>+</div>
-        <p class="say">YouTube Shorts views in 12 days, on a new clip channel I run.</p>
-      </div>
-      <div class="chart">
-        <h3>Views per Short</h3>
-        <div class="bars">
-          <div class="barrow">
-            <div class="lab"><span>Typical channel under 1,000 subscribers</span><b>50 to 500</b></div>
-            <div class="tr"><div class="fill" data-left="4.2" data-width="37.5"></div></div>
-          </div>
-          <div class="barrow me">
-            <div class="lab"><span>My clip channel, median</span><b><span data-count="1050">1,050</span></b></div>
-            <div class="tr"><div class="fill" data-left="0" data-width="87.5"></div></div>
-          </div>
-        </div>
-        <div class="axis"><span>0</span><span>400</span><span>800</span><span>1,200</span></div>
-        <p class="src">My numbers: YouTube Studio, October 2026. Benchmark: published 2026 Shorts benchmarks for channels under 1,000 subscribers.</p>
-      </div>
-    </section>
-
-    <section class="reveal">
-      <div class="edl-head">
-        <h2>What happens to every clip</h2>
-        <p class="muted">This is the edit list I run on each Short. Nothing is auto-generated and left alone: I pick every moment by hand and check every caption.</p>
-      </div>
+    <section class="edit reveal">
+      <h2>What I do to every clip</h2>
       <div class="edl">
         <table>
-          <thead><tr><th>Timecode</th><th>Track</th><th>What I do</th></tr></thead>
           <tbody>
-            <tr><td>00:00:00</td><td><span>TITLE</span></td><td>A hook line you can read on the very first frame, where people decide to stay or swipe</td></tr>
-            <tr><td>00:00:00</td><td><span>CUT</span></td><td>Start on the punchline. The setup goes, or gets moved after the hook</td></tr>
-            <tr><td>00:00:00+</td><td><span>CUT</span></td><td>Pauses longer than 0.3 seconds removed so it never drags</td></tr>
-            <tr><td>00:00:00+</td><td><span>CAPS</span></td><td>Captions word by word, spell-checked, inside the area apps don't cover</td></tr>
-            <tr><td>00:00:05</td><td><span>ZOOM</span></td><td>Punch-in on the words that matter</td></tr>
-            <tr><td>00:00:08</td><td><span>GFX</span></td><td>A number card when you quote a stat, with the real number</td></tr>
-            <tr><td>whole clip</td><td><span>MIX</span></td><td>Loudness set for Shorts and Reels, music that dips under your voice</td></tr>
-            <tr><td>export</td><td><span>OUT</span></td><td>1080 × 1920, plus a title, description and hashtags for YouTube, Instagram and TikTok</td></tr>
+            <tr><td>first frame</td><td>TITLE</td><td>A hook line you can read before anyone decides to swipe</td></tr>
+            <tr><td>first second</td><td>CUT</td><td>Start on the punchline. The setup goes, or comes after the hook</td></tr>
+            <tr><td>throughout</td><td>CUT</td><td>Every pause over 0.3 seconds removed</td></tr>
+            <tr><td>throughout</td><td>CAPS</td><td>Captions word by word, checked by hand, clear of the app buttons</td></tr>
+            <tr><td>key words</td><td>ZOOM</td><td>A punch-in when the line matters</td></tr>
+            <tr><td>on a stat</td><td>GFX</td><td>The real number on screen</td></tr>
+            <tr><td>whole clip</td><td>MIX</td><td>Loud enough for phones, music sitting under your voice</td></tr>
+            <tr><td>export</td><td>OUT</td><td>1080 × 1920, with a title and caption written for YouTube, Instagram and TikTok</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section id="how" class="reveal">
-      <h2>How it works</h2>
-      <div class="flow">
-        <div><span class="when">Today</span><h3>Send one episode</h3><p class="muted">A YouTube link or a file. Nothing to prepare.</p></div>
-        <div><span class="when">Within 48 hours</span><h3>Get 3 Shorts, free</h3><p class="muted">Made from that episode, so you judge the work on your own content. Keep them either way.</p></div>
-        <div><span class="when">Every week after</span><h3>Clips keep arriving</h3><p class="muted">If you like them, pick a plan and get new Shorts from each episode, ready to post.</p></div>
-      </div>
-    </section>
-
-    <section id="plans" class="reveal">
-      <h2>Plans</h2>
-      <div class="plans">
-        <table>
-          <thead>
-            <tr><th></th><th>Try it<small>No card</small></th><th class="pick">Weekly<small>Most people start here</small></th><th>Daily<small>For daily posting</small></th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Price</td><td><span class="price">$0</span></td><td class="pick"><span class="price">$149</span><small> / month</small></td><td><span class="price">$299</span><small> / month</small></td></tr>
-            <tr><td>Shorts</td><td>3 from one episode</td><td class="pick">20 a month</td><td>45 a month</td></tr>
-            <tr><td>Titles and captions per platform</td><td>Yes</td><td class="pick">Yes</td><td>Yes</td></tr>
-            <tr><td>Monthly note on what performed best</td><td>No</td><td class="pick">No</td><td>Yes</td></tr>
-            <tr><td>Revisions</td><td>One round</td><td class="pick">One round per clip</td><td>One round per clip</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="muted" style="margin-top:14px">Cancel anytime. Details in the <a href="terms.html">terms</a>.</p>
-    </section>
-
-    <section id="contact" class="contact reveal">
+    <section class="work reveal">
       <div>
-        <h2>Get your 3 free Shorts</h2>
-        <p class="muted" style="margin-top:14px">Email me your podcast and which episode to use. I reply within a day.</p>
+        <h2>How we'd work</h2>
+        <p>You send a YouTube link or a file. Within 48 hours I send back 3 finished Shorts, free, yours to keep either way. If you like them, I make clips from every new episode and send them each week, ready to post.</p>
       </div>
-      <div class="mailbox">
-        <code id="email">sampuushibabhakti@gmail.com</code>
-        <button class="copy" id="copyBtn" type="button">Copy email</button>
-      </div>
+      <ul class="prices">
+        <li><span class="p">$0</span><span class="d"><b>3 Shorts</b> from one episode. No card, no commitment.</span></li>
+        <li><span class="p">$149<small> /mo</small></span><span class="d"><b>20 Shorts a month.</b> Titles and captions for each platform.</span></li>
+        <li><span class="p">$299<small> /mo</small></span><span class="d"><b>45 Shorts a month</b>, plus a monthly note on what performed best.</span></li>
+      </ul>
+    </section>
+
+    <section class="contact reveal">
+      <h2>Send me an episode</h2>
+      <p class="big" id="email">sampuushibabhakti@gmail.com</p>
+      <div class="row"><button class="copy" id="copyBtn" type="button">Copy email</button><span class="muted" style="color:var(--muted)">I reply within a day.</span></div>
     </section>
   </main>
 
   <footer>
-    <span>Edits by Sampu · short-form editing for podcasts and interviews · Nepal</span>
+    <span>Sampu · podcast editing · Nepal</span>
     <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span>
   </footer>
 </div>

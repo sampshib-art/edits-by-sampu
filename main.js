@@ -1,4 +1,4 @@
-// Edits by Sampu - small, light motion. Everything is visible without this file; it only adds motion.
+// Edits by Sampu - light motion only. The page is complete without this file.
 (function () {
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -7,26 +7,31 @@
     try {
       var lenis = new window.Lenis({ duration: 1.1, smoothWheel: true });
       (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
-      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-        a.addEventListener("click", function (e) {
-          var id = a.getAttribute("href");
-          if (id.length > 1 && document.querySelector(id)) { e.preventDefault(); lenis.scrollTo(id, { offset: -10 }); }
-        });
-      });
     } catch (e) { /* plain scrolling */ }
   }
 
-  // reveal sections that start below the fold; bars and numbers animate when their section appears
+  // clips play only while on screen (saves battery and data on phones)
+  var vids = document.querySelectorAll(".reel video");
+  if ("IntersectionObserver" in window) {
+    var vio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); }
+      });
+    }, { threshold: 0.35 });
+    vids.forEach(function (v) { vio.observe(v); });
+  }
+
+  // sections below the fold fade up; numbers count to their real value; bars grow
   function countUp(el) {
-    var end = +el.getAttribute("data-count"), t0 = null, dur = 1100;
+    var end = +el.getAttribute("data-count"), t0 = null;
     if (reduce) { el.textContent = end.toLocaleString("en-US"); return; }
-    function step(t) {
+    (function step(t) {
       if (!t0) t0 = t;
-      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      var p = Math.min(1, (t - t0) / 1100), e = 1 - Math.pow(1 - p, 3);
       el.textContent = Math.round(end * e).toLocaleString("en-US");
       if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
+    })(performance.now());
   }
   function fillBars(root) {
     root.querySelectorAll(".fill").forEach(function (f) {
@@ -44,10 +49,10 @@
         s.querySelectorAll("[data-count]").forEach(function (c) { c.textContent = "0"; });
       } else { fillBars(s); }
     });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        var s = en.target;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var s = e.target;
         if (s.classList.contains("armed")) {
           s.classList.add("in"); s.classList.remove("armed");
           fillBars(s);
@@ -55,51 +60,18 @@
         }
         io.unobserve(s);
       });
-    }, { threshold: 0.18 });
+    }, { threshold: 0.2 });
     secs.forEach(function (s) { io.observe(s); });
   } else {
     secs.forEach(fillBars);
   }
 
-  // phone preview: captions play word by word while the playhead runs along the timeline
-  var lines = [
-    ["MOST", "PEOPLE", "SWIPE"], ["IN", "ONE", "SECOND."], ["SO", "THE", "HOOK"], ["GOES", "ON", "FRAME", "ONE."],
-    ["THEN", "EVERY", "WORD"], ["LANDS", "ON", "SCREEN."]
-  ];
-  var caps = document.getElementById("caps"), bar = document.getElementById("pbar"),
-      head = document.getElementById("head"), tc = document.getElementById("tc"), wave = document.getElementById("wave");
-  if (wave) {
-    var h = [6, 12, 18, 9, 20, 14, 7, 16, 22, 11, 8, 18, 13, 21, 10, 6, 15, 19, 9, 12, 17, 8, 14, 20, 11, 7, 16, 12];
-    h.forEach(function (v) { var i = document.createElement("i"); i.style.height = v + "px"; wave.appendChild(i); });
-  }
-  if (caps) {
-    var words = [], li, wi;
-    lines.forEach(function (l, i) { l.forEach(function (w, j) { words.push({ line: i, idx: j }); }); });
-    var total = words.length, k = 0, stepMs = reduce ? 1400 : 330;
-    function show(n) {
-      var w = words[n], l = lines[w.line];
-      if (caps.getAttribute("data-line") !== String(w.line)) {
-        caps.innerHTML = l.map(function (x) { return "<b>" + x + "</b>"; }).join(" ");
-        caps.setAttribute("data-line", String(w.line));
-      }
-      var bs = caps.querySelectorAll("b");
-      bs.forEach(function (b, i) { b.classList.toggle("on", i === w.idx); });
-      var p = (n + 1) / total;
-      bar.style.width = (p * 100) + "%";
-      head.style.left = "calc(" + (p * 100) + "% - " + (p * 20) + "px + 10px)";
-      var sec = Math.round(p * 24);
-      tc.textContent = "00:00:" + (sec < 10 ? "0" : "") + sec;
-    }
-    show(0);
-    setInterval(function () { k = (k + 1) % total; show(k); }, stepMs);
-  }
-
   // copy email
   var btn = document.getElementById("copyBtn");
   if (btn) btn.addEventListener("click", function () {
-    var text = document.getElementById("email").textContent;
+    var el = document.getElementById("email"), text = el.textContent.trim();
     function selectIt() {
-      var r = document.createRange(); r.selectNodeContents(document.getElementById("email"));
+      var r = document.createRange(); r.selectNodeContents(el);
       var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
       btn.textContent = "Selected, press Ctrl+C";
     }
