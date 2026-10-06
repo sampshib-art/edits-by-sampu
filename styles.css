@@ -36,6 +36,8 @@ a:hover { color: var(--rec); }
 .top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-block: 26px 10px; flex-wrap: wrap; }
 .mark { font-weight: 700; font-size: 19px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; letter-spacing: -0.2px; }
 
+.top nav { display: flex; gap: 18px; font-size: 15px; }
+.top nav a { text-decoration: none; color: var(--muted); }
 .top .mail-top { font-family: var(--mono); font-size: 14px; color: var(--muted); }
 
 /* intro */
