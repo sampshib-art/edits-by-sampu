@@ -35,7 +35,7 @@ a:hover { color: var(--rec); }
 .wrap { max-width: 1180px; margin: 0 auto; padding-inline: 22px; padding-block: 0 60px; }
 .top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-block: 26px 10px; flex-wrap: wrap; }
 .mark { font-weight: 700; font-size: 19px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; letter-spacing: -0.2px; }
-.mark i { width: 9px; height: 9px; border-radius: 50%; background: var(--rec); display: inline-block; }
+
 .top .mail-top { font-family: var(--mono); font-size: 14px; color: var(--muted); }
 
 /* intro */
@@ -117,11 +117,11 @@ footer a { color: var(--muted); }
 @media (prefers-reduced-motion: no-preference) {
   .intro h1 .ln > span { animation: up .8s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i) * 90ms + 80ms); }
   .reel .clip { animation: fade .8s ease both; animation-delay: calc(var(--i) * 80ms + 380ms); }
-  .mark i { animation: rec 2.2s ease-in-out infinite; }
+
 }
 @keyframes up { from { transform: translateY(105%); } }
 @keyframes fade { from { opacity: 0; transform: translateY(16px); } }
-@keyframes rec { 50% { opacity: .25; } }
+
 
 @media (max-width: 900px) {
   .intro, .numbers, .work { grid-template-columns: minmax(0, 1fr); gap: 28px; }
